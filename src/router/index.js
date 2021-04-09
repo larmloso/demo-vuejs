@@ -29,6 +29,32 @@ const routes = [
     path: '/demo2',
     name: 'demo2',
     component: () => import('../views/Demo2.vue')
+  },
+  {
+    path: '/demo3',
+    name: 'demo3',
+    component: () => import('../views/Demo3.vue')
+  },
+  {
+    path: '/demo4',
+    name: 'demo4',
+    component: () => import('../views/Demo4_commputed.vue')
+
+  },
+  {
+    path: '/demo5',
+    name: 'demo5',
+    component: () => import('../views/Demo5_binding.vue')
+  },
+  {
+    path: '/demo6',
+    name: 'demo6',
+    component: () => import('../views/Demo6_form.vue')
+  },
+  {
+    path: '/demo7',
+    name: 'demo7',
+    component: () => import('../views/Demo7_slot.vue')
   }
 ]
 

@@ -5,6 +5,7 @@
       <button v-on:click="clickMe2('welcom to vuejs')"> ClickMe2</button>
 
         <h3>{{getTimestamp()}}</h3>
+        <span class="title">1234</span>
   </div>
 </template>
 
@@ -12,7 +13,15 @@
 <script> 
 export default {
     name: 'demo2',
+
+    /// คลายๆ constructor
+    mounted(){
+        this.initial();
+    },
     methods: {
+        initial() {
+            console.log("initailzation")
+        },
         clickMe(){
             alert("Hi")
         },
@@ -28,6 +37,8 @@ export default {
 }
 </script>
 
-<style>
-    @import url('../views/style.css');
+<style scoped>
+    .title {
+        font-size: 29px;
+    }
 </style>

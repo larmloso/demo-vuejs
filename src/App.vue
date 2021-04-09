@@ -1,27 +1,42 @@
 <template>
   <div id="app">
-    <ul>
-      <li><router-link to="/">Home</router-link> </li>
-      <li><router-link to="/demo1">Demo1</router-link> </li>
-      <li><router-link to="/demo2">Demo2</router-link></li>
-    </ul>
-    <router-view></router-view>
+    <Hearder />
+    <Content />
+    <Footer
+      @onClock="onClock"
+      title="copying 2021 by larm ldt."
+      color="green"
+    />
+    <span>{{ time }}</span>
   </div>
 </template>
 
 <script>
+import Hearder from "../src/components/layout/Header";
+import Footer from "../src/components/layout/Footer";
+import Content from '../src/components/layout/Content';
+import moment from "moment";
 export default {
   name: "app",
+  components: {
+    Hearder,
+    Footer,
+    Content,
+  },
+  methods: {
+    onClock(value) {
+      this.time = moment(value).format("MM/DD/YYYY hh:mm:ss");
+      //this.time = value
+    },
+  },
+  data() {
+    return {
+      time: "",
+    };
+  },
 };
 </script>
 
-<style>
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  li {
-    display: inline;
-    margin-right: 7px;
-  }
+<style scoped>
+
 </style>
